@@ -41,11 +41,11 @@ function success {
 function run {
   step "Starting developer environment"
 
+  tick "Create secrets directory"
+  mkdir -p provisioning/.secrets
+
   tick "Link AWS credentials to secrets directory"
   ln -sf ~/.aws/credentials provisioning/.secrets/credentials
-
-  tick "Create secrets directory"
-  mkdir -p vagrant/.secrets
 
   tick "Start vagrant"
 
