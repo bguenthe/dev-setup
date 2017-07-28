@@ -55,7 +55,7 @@ function run {
 }
 
 function destroy {
-  step "Destroying developer environment"
+  step "💣  Destroying developer environment"
 
   vagrant destroy
 
