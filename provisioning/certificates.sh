@@ -2,9 +2,6 @@
 
 echo "Install OTTO certificates"
 
-rm -f /usr/local/share/ca-certificates/otto.crt
-rm -f /usr/local/share/ca-certificates/old_otto.crt
-
 OTTO_ROOT_CERT_DOWNLOAD="${DOWNLOADS_DIR}/root_ca.crt"
 curl -s http://pki.ottogroup.com/OTTO-Root-CA-v01.crt > ${OTTO_ROOT_CERT_DOWNLOAD}
 
