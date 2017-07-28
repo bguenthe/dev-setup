@@ -1,9 +1,5 @@
 #! /usr/bin/env bash
 
-mkdir -p /repos
-
-git_clone "intrastat"
-
 function git_clone {
     repo=$1
     # only do a git clone if the directory for the project doesn't exist
@@ -12,3 +8,5 @@ function git_clone {
     fi
 }
 
+mkdir -p /repos
+git_clone "intrastat"
