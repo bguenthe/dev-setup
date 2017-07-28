@@ -9,7 +9,7 @@ echo "cd /repos/" >> /home/ubuntu/.bashrc
 
 # Start SSH agent via bashrc if it's not running yet
 echo "
-if [ -z ${SSH_AUTH_SOCK} ] ; then
+if [ -z \${SSH_AUTH_SOCK} ] ; then
     eval \$(ssh-agent)
     ssh-add
 fi
