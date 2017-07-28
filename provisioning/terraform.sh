@@ -20,5 +20,4 @@ sha256sum --check --strict terraform_${TERRAFORM_VERSION}_SHA256SUMS
 unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin
 rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-
 source /etc/environment

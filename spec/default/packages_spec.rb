@@ -19,3 +19,19 @@ end
 describe package('ntp') do
   it { should be_installed }
 end
+
+describe package('default-jdk') do
+  it { should be_installed }
+end
+
+describe package('maven') do
+  it { should be_installed }
+end
+
+describe package('postgresql') do
+  it { should be_installed }
+end
+
+describe package('postgresql-contrib') do
+  it { should be_installed }
+end

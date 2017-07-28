@@ -2,6 +2,7 @@
 
 echo "Install Postgresql"
 sudo apt-get install -y postgresql postgresql-contrib
+
 # Allow connections to Postgres from outside of vagrant
 # Edit postgresql.conf to change listen address to '*':
 sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" "/etc/postgresql/9.5/main/postgresql.conf"
