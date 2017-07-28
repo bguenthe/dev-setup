@@ -2,8 +2,6 @@
 
 echo "Install OTTO certificates"
 
-apt-get install openssl
-
 rm -f /usr/local/share/ca-certificates/otto.crt
 rm -f /usr/local/share/ca-certificates/old_otto.crt
 
