@@ -1,0 +1,6 @@
+.idea/
+.vagrant/
+.bundle/
+ubuntu-*-console.log
+
+provisioning/.secrets/
