@@ -10,3 +10,5 @@ sudo apt-get install -y docker-ce
 
 sudo gpasswd -a ubuntu docker
 newgrp docker
+
+sudo pip install docker-compose
