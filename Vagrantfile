@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1" # Jenkins
 
   # Sync Folder Vagrant to Host
-  config.vm.synced_folder ".", "/infrastructure/"
+  config.vm.synced_folder ".", "/setup/"
   config.vm.synced_folder "../", "/repos/"
 
   # Provisioning
