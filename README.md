@@ -11,7 +11,8 @@ Vor dem Einrichten der Entwicklungsumgebung müssen ein paar wenige Voraussetzun
   1. [Vagrant](https://www.vagrantup.com/downloads.html) für das eigene Betriebssystem installieren
   2. Windows-User: SSH-Key unter `G:/.ssh/id_rsa` (private key) und `G:/.ssh/id_rsa.pub` (public key) bereitstellen. Der SSH-Key wird in die Vagrant VM kopiert
   3. SSH-Public-Key [zu Bitbucket hinzufügen](https://bitbucket.scm.otto.de/plugins/servlet/ssh/account/keys)
-  4. *[Optional]* [AWS CLI](https://aws.amazon.com/cli/) installieren und anschließend einmal `aws configure` ausführen. Die Fragen der CLI mit dem eigenen Access Key, Secret Access Key und `eu-central-1` als "region" beantworten. Das Installieren der AWS CLI auf dem Host verhindert, dass nach dem Abreißen der Vagrant VM die Credentials neu eingegeben werden müssen
+  4. [AWS CLI](https://aws.amazon.com/cli/) installieren und anschließend einmal `aws configure` ausführen. Die Fragen der CLI mit dem eigenen Access Key, Secret Access Key und `eu-central-1` als "region" beantworten. Das Installieren der AWS CLI auf dem Host verhindert, dass nach dem Abreißen der Vagrant VM die Credentials neu eingegeben werden müssen
+  5. Windows-User: AWS Credentials kopieren, von `%UserProfile%\.aws\credentials` nach `dev-setup\provisioning\.secrets\credentials`
 
 ## Hochfahren der Entwicklungsumgebung
 In der Command Line in das `dev-setup` Verzeichnis wechseln und dort
