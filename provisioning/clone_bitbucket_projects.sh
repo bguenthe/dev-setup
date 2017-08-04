@@ -9,4 +9,6 @@ function git_clone {
 }
 
 mkdir -p /repos
+
 git_clone "intrastat"
+git_clone "cd-server"
