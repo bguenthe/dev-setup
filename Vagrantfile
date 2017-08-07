@@ -34,5 +34,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./provisioning/postgres.sh"
   config.vm.provision "shell", path: "./provisioning/terraform.sh"
   config.vm.provision "shell", path: "./provisioning/aws.sh"
-  config.vm.provision "shell", path: "./provisioning/clone_bitbucket_projects.sh"
+  config.vm.provision "shell", path: "./provisioning/clone_bitbucket_projects.sh", privileged: false
 end
