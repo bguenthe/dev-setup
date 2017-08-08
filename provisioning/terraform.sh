@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-TERRAFORM_VERSION="0.9.11"
+TERRAFORM_VERSION="0.10.0"
 
 echo "Install Terraform"
 
