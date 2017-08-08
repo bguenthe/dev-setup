@@ -12,3 +12,4 @@ mkdir -p /repos
 
 git_clone "intrastat"
 git_clone "cd-server"
+git_clone "infrastructure"
