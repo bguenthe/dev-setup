@@ -19,4 +19,4 @@ chmod 0600 /home/ubuntu/.ssh/id_rsa
 
 # Add Bitbucket to known hosts (to prevent interactive prompt when cloning)
 ssh-keyscan bitbucket.scm.otto.de >> /home/ubuntu/.ssh/known_hosts
-chown ubuntu /home/ubuntu/.ssh/known_hosts
+chown ubuntu:ubuntu /home/ubuntu/.ssh/known_hosts
