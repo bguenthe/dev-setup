@@ -9,4 +9,5 @@ copy g:\.ssh\id_rsa.pub provisioning\.secrets
 
 copy  %UserProfile%\.aws\credentials provisioning\.secrets
 
+vagrant plugin install vagrant-serverspec
 vagrant up
