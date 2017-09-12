@@ -48,7 +48,8 @@ function run {
   ln -sf ~/.aws/credentials provisioning/.secrets/credentials
 
   tick "Start vagrant"
-
+ 
+  vagrant plugin install vagrant-serverspec
   vagrant up
 
   success "Started developer environment. Run ${YELLOW}vagrant ssh${RESET} to get started."
