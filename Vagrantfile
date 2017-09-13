@@ -36,8 +36,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./provisioning/aws.sh"
   config.vm.provision "shell", path: "./provisioning/clone_bitbucket_projects.sh", privileged: false
   config.vm.provision "shell", path: "./provisioning/ruby.sh"
-
-  config.vm.provision :serverspec do |spec|
-    spec.pattern = 'spec/default/*_spec.rb'
-  end
 end

@@ -17,5 +17,5 @@ describe process('dockerd') do
 end
 
 describe command('docker --version') do
-  its(:stdout) { should match 'Docker version 17.06.2-ce' }
+  its(:stdout) { should match 'Docker version 17.06.0-ce' }
 end
