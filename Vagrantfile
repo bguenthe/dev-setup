@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_download_insecure=true
 
   # Port forwardings (private)
+  config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1" # Spring Boot
   config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
   config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1" # Jenkins
 
