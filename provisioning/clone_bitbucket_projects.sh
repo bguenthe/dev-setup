@@ -11,6 +11,7 @@ function git_clone {
 mkdir -p /repos
 
 git_clone "intrastat"
+git_clone "intrastat-artikelimport"
 git_clone "cd-server"
 git_clone "infrastructure"
 git_clone "be-dashboard"
