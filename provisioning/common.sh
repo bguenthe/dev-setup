@@ -13,6 +13,8 @@ if [ -z \${SSH_AUTH_SOCK} ] ; then
     eval \$(ssh-agent)
     ssh-add
 fi
+
+export PATH=.:\$PATH
 " >> /home/ubuntu/.bashrc
 
 chmod 0600 /home/ubuntu/.ssh/id_rsa
