@@ -7,6 +7,11 @@ Vagrant.configure("2") do |config|
   # avoid OTTO Certificates...
   config.vm.box_download_insecure=true
 
+  # Increase memory
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
+
   # Port forwardings (private)
   config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1" # Spring Boot
   config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
