@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1" # Spring Boot
   config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
   config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1" # Jenkins
+  config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1" # local Postgres DB
 
   # Sync Folder Vagrant to Host
   config.vm.synced_folder ".", "/setup/"
