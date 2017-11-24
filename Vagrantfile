@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
 
   # Increase memory
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "4"]
   end
 
   # Port forwardings (private)
@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
   config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1" # Jenkins
   config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1" # local Postgres DB
+  config.vm.network "forwarded_port", guest: 18080, host: 18080, host_ip: "127.0.0.1" # vnc-int
 
   # Sync Folder Vagrant to Host
   config.vm.synced_folder ".", "/setup/"
@@ -44,4 +45,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./provisioning/clone_bitbucket_projects.sh", privileged: false
   config.vm.provision "shell", path: "./provisioning/intrastat.sh"
   config.vm.provision "shell", path: "./provisioning/ruby.sh"
+  config.vm.provision "shell", path: "./provisioning/vnc_gui.sh"
+
 end
