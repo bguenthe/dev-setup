@@ -14,6 +14,9 @@ if [ -z \${SSH_AUTH_SOCK} ] ; then
     ssh-add
 fi
 
+PATH=\$PATH:/repos/vnc_gui/node
+PATH=\$PATH:/repos/vnc_gui/node_modules/@angular/cli/bin
+
 export PATH=.:\$PATH
 " >> /home/ubuntu/.bashrc
 
