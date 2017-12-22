@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
 #    config.ssh.forward_agent = true
 #  end
 
-  config.vm.provision "file", source: "./provisioning/.secrets/credentials", destination: "/home/ubuntu/.aws/credentials"
+  #config.vm.provision "file", source: "./provisioning/.secrets/credentials", destination: "/home/ubuntu/.aws/credentials"
   config.vm.provision "shell", path: "./provisioning/common.sh"
   #config.vm.provision "shell", path: "./provisioning/certificates.sh"
   config.vm.provision "shell", path: "./provisioning/jdk.sh"
