@@ -1,4 +1,4 @@
 #! /usr/bin/env bash
 
 echo "Install Gradle"
-sudo apt install gradle
+sudo apt-get install -y gradle
