@@ -9,6 +9,7 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 
 sudo gpasswd -a ubuntu docker
+sudo gpasswd -a vagrant docker
 newgrp docker
 
 sudo pip install docker-compose

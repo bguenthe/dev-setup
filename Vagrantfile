@@ -16,13 +16,14 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", type: "dhcp"
 
   # Port forwardings (private)
-  config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1" # Spring Boot
-  config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
-  config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1" # Jenkins
+  #config.vm.network "forwarded_port", guest: 4200, host: 4200, host_ip: "127.0.0.1" # angular dev-server
   config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1" # local Postgres DB
-  config.vm.network "forwarded_port", guest: 4200, host: 4200, host_ip: "127.0.0.1" # angular dev-server
-  config.vm.network "forwarded_port", guest: 27017, host: 27017, host_ip: "127.0.0.1" # mongodb
+  config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
+  config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1" # Spring Boot
+  config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1" # Jenkins
+  config.vm.network "forwarded_port", guest: 9092, host: 9092, host_ip: "127.0.0.1" # kafka
   config.vm.network "forwarded_port", guest: 15672, host: 15672, host_ip: "127.0.0.1" # rabbitmq management console
+  config.vm.network "forwarded_port", guest: 27017, host: 27017, host_ip: "127.0.0.1" # mongodb
 
   # Sync Folder Vagrant to Host
   config.vm.synced_folder ".", "/setup/"
@@ -31,6 +32,7 @@ Vagrant.configure("2") do |config|
   # erlaube symbolic links
   config.vm.provider "virtualbox" do |v|
         v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+        v.name = "bg"
   end
 
   # Provisioning
