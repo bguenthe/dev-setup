@@ -16,7 +16,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", type: "dhcp"
 
   # Port forwardings (private)
-  #config.vm.network "forwarded_port", guest: 4200, host: 4200, host_ip: "127.0.0.1" # angular dev-server
+  config.vm.network "forwarded_port", guest: 2181, host: 2181, host_ip: "127.0.0.1" # zookeeper
+  config.vm.network "forwarded_port", guest: 4200, host: 4200, host_ip: "127.0.0.1" # angular dev-server
   config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1" # local Postgres DB
   config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
   config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1" # Spring Boot
