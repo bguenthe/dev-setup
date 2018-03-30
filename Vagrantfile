@@ -3,6 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
+  config.disksize.size = '20GB'
 
   # avoid OTTO Certificates...
   config.vm.box_download_insecure=true
@@ -16,13 +17,19 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", type: "dhcp"
 
   # Port forwardings (private)
-  config.vm.network "forwarded_port", guest: 2181, host: 2181, host_ip: "127.0.0.1" # zookeeper
-  config.vm.network "forwarded_port", guest: 4200, host: 4200, host_ip: "127.0.0.1" # angular dev-server
-  config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1" # local Postgres DB
-  config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1" # Spring Boot
-  config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1" # Spring Boot
-  config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1" # Jenkins
-  config.vm.network "forwarded_port", guest: 9092, host: 9092, host_ip: "127.0.0.1" # kafka
+  config.vm.network "forwarded_port", guest: 80, host: 80, host_ip: "127.0.0.1"       # nginx
+  config.vm.network "forwarded_port", guest: 2181, host: 2181, host_ip: "127.0.0.1"   # zookeeper
+  config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"   # grafana
+  config.vm.network "forwarded_port", guest: 4200, host: 4200, host_ip: "127.0.0.1"   # angular dev-server
+  config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1"   # local Postgres DB
+  config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1"   # Spring Boot
+  config.vm.network "forwarded_port", guest: 8081, host: 8081, host_ip: "127.0.0.1"   # Spring Boot
+  config.vm.network "forwarded_port", guest: 8082, host: 8082, host_ip: "127.0.0.1"   # Spring Boot
+  config.vm.network "forwarded_port", guest: 8083, host: 8083, host_ip: "127.0.0.1"   # Spring Boot
+  config.vm.network "forwarded_port", guest: 8084, host: 8084, host_ip: "127.0.0.1"   # Spring Boot
+  config.vm.network "forwarded_port", guest: 8443, host: 8443, host_ip: "127.0.0.1"   # Spring Boot
+  config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1"   # Jenkins
+  config.vm.network "forwarded_port", guest: 9092, host: 9092, host_ip: "127.0.0.1"   # kafka
   config.vm.network "forwarded_port", guest: 15672, host: 15672, host_ip: "127.0.0.1" # rabbitmq management console
   config.vm.network "forwarded_port", guest: 27017, host: 27017, host_ip: "127.0.0.1" # mongodb
 
