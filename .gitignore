@@ -4,3 +4,5 @@
 ubuntu-*-console.log
 
 provisioning/.secrets/
+/.vagrant/
+/.idea/
