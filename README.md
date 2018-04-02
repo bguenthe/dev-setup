@@ -48,3 +48,31 @@ die komplette Umgebung abreißen. Mit einem
     vagrant up
 
 wird dann eine neue Version hochgefahren und eingerichtet.
+
+#Vagrant
+**Plugin zum Rezizen der Disk**
+
+vagrant plugin install vagrant-disksize
+
+**Einbauen mit**
+
+Vagrant.configure('2') do |config|
+  config.vm.box = 'ubuntu/xenial64'
+  config.disksize.size = '50GB'
+end
+
+#Docker
+
+Alle stopped Container löschen
+docker rm $(docker ps -aq)
+
+Alle images löschen
+docker rmi $(docker images -q)
+
+#DNS
+Zum testen
+in  c:\windows\system32\drivers\etc\hosts folgende Zeilen eintragen
+    127.0.0.1       kafka
+	127.0.0.1       zookeeper
+	127.0.0.1       postgres	
+
