@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 3000, host: 3000, host_ip: "127.0.0.1"   # grafana
   config.vm.network "forwarded_port", guest: 4200, host: 4200, host_ip: "127.0.0.1"   # angular dev-server
   config.vm.network "forwarded_port", guest: 5432, host: 5432, host_ip: "127.0.0.1"   # local Postgres DB
+  config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1"   # Spring Boot DEBUG
   config.vm.network "forwarded_port", guest: 8080, host: 8080, host_ip: "127.0.0.1"   # Spring Boot
   config.vm.network "forwarded_port", guest: 8081, host: 8081, host_ip: "127.0.0.1"   # Spring Boot
   config.vm.network "forwarded_port", guest: 8082, host: 8082, host_ip: "127.0.0.1"   # Spring Boot
