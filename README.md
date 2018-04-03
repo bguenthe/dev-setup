@@ -50,7 +50,7 @@ die komplette Umgebung abreißen. Mit einem
 wird dann eine neue Version hochgefahren und eingerichtet.
 
 #Vagrant
-**Plugin zum Rezizen der Disk**
+**Plugin zum resizen der Disk**
 
 vagrant plugin install vagrant-disksize
 
