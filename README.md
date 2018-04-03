@@ -76,4 +76,3 @@ in  c:\windows\system32\drivers\etc\hosts folgende Zeilen eintragen
 	127.0.0.1       zookeeper
 	127.0.0.1       postgres
 	127.0.0.1       mongo
-
