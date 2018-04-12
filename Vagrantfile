@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
   # Increase memory
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "8096", "--cpus", "4"]
+    vb.customize ["modifyvm", :id, "--memory", "6096", "--cpus", "4"]
   end
 
   # Netzwerk für IP-Adresse
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
 
   # Sync Folder Vagrant to Host
   config.vm.synced_folder ".", "/setup/"
-  config.vm.synced_folder "../", "/repos/"
+  config.vm.synced_folder "../Dropbox/ideaprojects", "/repos/"
 
   # erlaube symbolic links
   config.vm.provider "virtualbox" do |v|
