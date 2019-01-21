@@ -11,10 +11,6 @@ Vagrant.configure("2") do |config|
   # Increase memory
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "6096", "--cpus", "4"]
-    # ADD USB
-    vb.customize ["modifyvm", :id, "--usb", "on"]
-    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'ESP', '--vendorid', '0x074d', '--productid', '0x3556']
-    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'ESP', '--vendorid', '0x05e3', '--productid', '0x0743']
   end
 
   # Netzwerk für IP-Adresse
@@ -50,19 +46,7 @@ Vagrant.configure("2") do |config|
         v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
   end
 
-  # Provisioning
-  ## Copy SSH Keys from G:/ share if we're running on Windows
-#  if Vagrant::Util::Platform.windows? then
-#    config.vm.provision "file", source: "G:/.ssh/", destination: "/home/ubuntu/.ssh/"
-#    config.vm.provision "file", source: "G:/.ssh/id_rsa.pub", destination: "/home/ubuntu/.ssh/id_rsa.pub"
-#    config.vm.provision "file", source: "G:/.ssh/id_rsa", destination: "/home/ubuntu/.ssh/id_rsa"
-#  else
-#    config.ssh.forward_agent = true
-#  end
-
-  #config.vm.provision "file", source: "./provisioning/.secrets/credentials", destination: "/home/ubuntu/.aws/credentials"
   config.vm.provision "shell", path: "./provisioning/common.sh"
-  #config.vm.provision "shell", path: "./provisioning/certificates.sh"
   config.vm.provision "shell", path: "./provisioning/jdk.sh"
   config.vm.provision "shell", path: "./provisioning/maven.sh"
   config.vm.provision "shell", path: "./provisioning/gradle.sh"
@@ -70,8 +54,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./provisioning/postgres.sh"
   config.vm.provision "shell", path: "./provisioning/terraform.sh"
   config.vm.provision "shell", path: "./provisioning/aws.sh"
-  #config.vm.provision "shell", path: "./provisioning/clone_bitbucket_projects.sh", privileged: false
-  #config.vm.provision "shell", path: "./provisioning/intrastat.sh"
   config.vm.provision "shell", path: "./provisioning/ruby.sh"
   config.vm.provision "shell", path: "./provisioning/npmnode.sh"
 end
