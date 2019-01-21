@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
-  config.disksize.size = '20GB'
+  config.vm.box = "ubuntu/bionic64"
+  config.disksize.size = '30GB'
 
   # avoid OTTO Certificates...
   config.vm.box_download_insecure=true
@@ -11,6 +11,10 @@ Vagrant.configure("2") do |config|
   # Increase memory
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "6096", "--cpus", "4"]
+    # ADD USB
+    vb.customize ["modifyvm", :id, "--usb", "on"]
+    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'ESP', '--vendorid', '0x074d', '--productid', '0x3556']
+    vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'ESP', '--vendorid', '0x05e3', '--productid', '0x0743']
   end
 
   # Netzwerk für IP-Adresse
@@ -39,7 +43,7 @@ Vagrant.configure("2") do |config|
 
   # Sync Folder Vagrant to Host
   config.vm.synced_folder ".", "/setup/"
-  config.vm.synced_folder "../Dropbox/ideaprojects", "/repos/"
+  config.vm.synced_folder "../", "/repos/"
 
   # erlaube symbolic links
   config.vm.provider "virtualbox" do |v|
